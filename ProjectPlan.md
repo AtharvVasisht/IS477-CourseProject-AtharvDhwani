@@ -19,9 +19,65 @@ To delve deeper into the trends and goals identified above, we have the followin
 These research questions have provided us with guidance and clarity as we have continuosly identified, iterated upon, and began utilizing datasets for analysis. 
 
 ### Team ###
-While both team members (Atharv and Dhwani) aim at fulfilling and collaborating on all responsibilities, we aim at distributing responsibilities in a way that enable both members to perform to their strengths, and effectively handle specific workflows related to the project. Both members will focus on ensuring success in all aspects of the data lifecycle management; ensuring quality control from ethical data handling, storage and organization, data cleaning/integration, quality/assessment, and most importantly, reproducibility. Throughout this data lifecycle process, Dhwani's main focus will revolve around ensuring adequate/ethical data handling, data cleaning, and integration between both datasets to ensure a streamlined ability for machine learning, visualization, and analysis. Meanwhile, Atharv will prioritize tracking technical documentation, data visualization, and proper extraction for metrics, key conclusions, and takeaways. By strategically allocating "focus areas" and specific responsibilities, while having goals such as "biweekly progress checks" meant to faciliate strong collaboration, we, as a team, aim to ensure for successful data ingestion for analysis.
+While both team members (Atharv and Dhwani) aim at fulfilling and collaborating on all responsibilities, we aim at distributing responsibilities in a way that enable both members to perform to their strengths, and effectively handle specific workflows related to the project. Both members will focus on ensuring success in all aspects of the data lifecycle management; ensuring quality control from ethical data handling, storage and organization, data cleaning/integration, quality/assessment, and most importantly, reproducibility. Throughout this data lifecycle process, Atharv's main focus will revolve around ensuring adequate/ethical data handling, data cleaning, and integration between both datasets to ensure a streamlined ability for machine learning, visualization, and analysis. Meanwhile, Dhwani will prioritize tracking technical documentation, data visualization, and proper extraction for metrics, key conclusions, and takeaways. By strategically allocating "focus areas" and specific responsibilities, while having goals such as "biweekly progress checks" meant to faciliate strong collaboration, we, as a team, aim to ensure for successful data ingestion for analysis.
 
 Through this collaboration, we aim at providing a conclusive final synthesis and report, showcasing the details of this project and the significance our analysis has on homeowners and buyers across the US. Additionally, our analysis aims at drawing upon key data ethics, reproducibility, privacy, and purpose principles to ensure our project meets proper code of conduct. 
+
+1. Atharv Vasisht – Technical Analysis & Data Infrastructure
+
+**Goals:**
+
+Develop a robust data pipeline to integrate, clean, and analyze large-scale datasets from Zillow and the BEA.
+
+Apply reproducible data management principles to ensure the entire project workflow can be replicated accurately.
+
+Provide the analytical foundation to link macroeconomic patterns to housing affordability trends.
+
+**Responsibilities:**
+
+**Ethical Data Handling (Module 2):** Ensure that all datasets (Zillow, BEA) comply with usage and licensing terms; verify data reproducibility and citation standards.
+
+**Storage & Organization (Modules 4–5):** Establish a well-documented, version-controlled file structure in GitHub for storing raw, processed, and cleaned data.
+
+**Data Integration (Modules 7–8):** Combine housing valuation and income datasets to create metro-level affordability indices and growth metrics.
+
+**Data Cleaning (Module 10):** Handle missing values, normalize variables across years, and validate statistical consistency between data sources.
+
+**Technical Documentation (Module 13 & 15):** Maintain clear metadata, data dictionary, and processing logs for full transparency.
+
+**Workflow Collaboration:** Work with Dhwani to automate reproducibility scripts and ensure all analyses are trackable in the final deliverable.
+
+2. Dhwani Patel – Data Acquisition & Quality Assurance
+
+**Goals:**
+
+Collect and validate all primary datasets while ensuring adherence to ethical, reproducible data practices.
+
+Oversee data enrichment and validation to guarantee data accuracy, consistency, and contextual relevance.
+
+Support analytical interpretation of findings by ensuring reliable data quality and documentation.
+
+**Responsibilities:**
+
+**Data Lifecycle Management:** Outline and monitor each phase from acquisition to analysis, ensuring data completeness.
+
+**Data Collection & Acquisition (Module 3):** Extract Zillow ZHVI and BEA income data directly from official sources, verifying download integrity and schema.
+
+**Extraction & Enrichment (Module 6)**: Derive additional metrics (growth rates, affordability ratios) and annotate data with contextual metadata.
+
+**Data Quality Assessment (Module 9):** Conduct consistency checks, identify outliers, and validate inter-year continuity for time-series data.
+
+**Workflow Automation & Provenance (Modules 11–12):** Collaborate on version control and automated data updates using reproducible scripts.
+
+**Reproducibility & Transparency (Modules 13 & 15):** Contribute to final documentation detailing data lineage, methodology, and ethical considerations.
+
+3. Joint Responsibilities (Atharv & Dhwani)
+
+**Weekly Progress Coordination**: Meet twice a week (Tuesday and Thursday) to align progress, track deliverables, and update interim status reports.
+
+**Final Synthesis**: Co-author final analytical insights, visualizations, and recommendations for homebuyers and policymakers.
+
+**Reproducibility & Presentation**: Ensure the final submission includes clear code, references, and transparent methodological explanation for reproducibility.
 
 ### Datasets ###
 1. Zillow Housing Data: https://www.zillow.com/research/data/
@@ -61,3 +117,13 @@ For the project timeline, even though we have delegated tasks to an extent, we p
 
     •    Metadata and data documentation (cf. Module 15): Dhwani & Atharv
 
+### Constraints & Gaps ###
+While the data sources we have picked are as wholistic, accurate, and direct as possible, there are some constraints that must be considered when conducting analysis on our data.
+
+1. Data Availability: While zillow and BEA both have relatively complete, standardized, and normalized data, there are some metropolitan areas that have inconsistent, incomplete, or null data that must be properly handled via imputation, pandas null handling, mean reversion, etc. Additionally, BEA provides income data in recent years but doesn't have data trailing back to 2000 - this is a constraint we must consider when conducting our analysis.
+2. Data Normalization & Usage Limits: We must ensure that data is normalized between both data sources - although they do seem to be normalized at first glance, we must ensure that both are expressed in similar terms. For example, if the zillow data is expressed in nominal USD (not adjusted for inflation) and the BEA data is expressed in real USD (inflation adjusted), this could cause problems in analysis accuracy. We must ensure we are understanding the fine prints of how this data is collected. Additionally, as per the terms of conditions, we must ensure make sure that our analysis is being used for academic purposes only, with non-commercial intent.
+3. Time Constraints: Given we have less than 2 months to complete this project, we must identify optimal ways to conduct predictive analytics - ensuring that they are wholistically representing data while also feasible to conduct in the given time. We must utilize proper research practices while also acknolwedging that we are time-bound when creating models that are both plausible and accurate.
+4. Visualization Gaps: While we do aim to use tools within python, excel, SQL, HTML, or PowerBi, we will need input in coming weeks on how to visualize data for our given subject matter. These visualizations will be crucial in aiding our overall analysis in terms of both accuracy and ease of interpretation for us and our audience respectively.
+
+### Next Steps ###
+With these considerations in mind, we aim to begin conducting our analysis by examining our datasets. This includes conducting exploratory data analysis and ensuring that we are understanding the fine prints regarding how the Zillow and BEA data were collected, in what standards they were normalized, and what these conditions mean for our analysis moving forward. Additionally, a crucial first step will involve conducting ethical assessments on the usability of this data and its future reproducibiility, along with ensuring proper handling of the aforementioned constraints to allow for wholistic data representation. These next steps will be conducted in accordance with the best practices described in IS 477 coursework and beyond. 
