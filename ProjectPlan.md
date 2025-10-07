@@ -10,10 +10,11 @@ The overarching goal of this project is to (a) identify the patterns associated 
 
 ### Research Questions ###
 To delve deeper into the trends and goals identified above, we have the following questions we would like to answer throughout the course of this analysis and proposal:
-
     • Which American metropolitan areas have seen the largest housing market appreciations since the year 2000, and given these trends, which housing markets make the most sense for Americans to invest in real estate? 
+
     • Which housing markets are currently trading at a "discount" and which ones are 
     "oversaturated" and bound for a correction?
+
     • How can everyday Americans maximize their incomes to identify homes/housing markets that provide the best value in terms of present day affordability (House price-to-Income ratio) and long-term growth potential (based on historic growth rates)?
 
 These research questions have provided us with guidance and clarity as we have continuosly identified, iterated upon, and began utilizing datasets for analysis. 
@@ -24,15 +25,26 @@ These research questions have provided us with guidance and clarity as we have c
 
 ### Project Timeline ###
 For the project timeline, even though we have delegated tasks to an extent, we plan on working together for each of these requirements. The individual responsible for the requirement will be responsible for submitting and refining the final product we submit to make sure the responsibility is shared. We will approach this project timeline with the same cadence as we have class. So we will aim to complete 2 tasks each week, one on Tuesday and one on Thursday. The Interim Status Report will also be worked on every week to update the progress of the project for that week by Friday. This means that we will complete the project in approximately 5 weeks, putting us at Nov, 14th. We will keep the week of November 17th to make final changes and polish the final product before Fall Break. Given this timeline, we will have the week of December 3 to make any changes and adjust for any delays if we experience any. 
+
     •    Data lifecycle: Dhwani 
+
     •    Ethical data handling (cf. Module 2): Atharv 
+
     •    Data collection and acquisition (cf. Module 3): Dhwani 
+
     •    Storage and organization (cf. Modules 4-5): Atharv
+
     •    Extraction and enrichment (cf. Module 6): Dhwani 
+
     •    Data integration (cf. Module 7-8): Atharv
+
     •    Data quality (cf. Module 9): Dhwani
+
     •    Data cleaning (cf. Module 10): Atharv 
+
     •    Workflow automation and provenance (cf. Module 11-12): Dhwani & Atharv
+
     •    Reproducibility and transparency (cf. Module 13):  Dhwani & Atharv
+
           •    Metadata and data documentation (cf. Module 15): Dhwani & Atharv
 
