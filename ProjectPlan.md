@@ -10,12 +10,11 @@ The overarching goal of this project is to (a) identify the patterns associated 
 
 ### Research Questions ###
 To delve deeper into the trends and goals identified above, we have the following questions we would like to answer throughout the course of this analysis and proposal:
-    • Which American metropolitan areas have seen the largest housing market appreciations since the year 2000, and given these trends, which housing markets make the most sense for Americans to invest in real estate? 
 
-    • Which housing markets are currently trading at a "discount" and which ones are 
-    "oversaturated" and bound for a correction?
-
-    • How can everyday Americans maximize their incomes to identify homes/housing markets that provide the best value in terms of present day affordability (House price-to-Income ratio) and long-term growth potential (based on historic growth rates)?
+1. Which American metropolitan areas have seen the largest housing market appreciations since the year 2000, and given these trends, which housing markets make the most sense for Americans to invest in real estate? 
+2. Which housing markets are currently trading at a "discount" and which ones are 
+"oversaturated" and bound for a correction?
+3. How can everyday Americans maximize their incomes to identify homes/housing markets that provide the best value in terms of present day affordability (House price-to-Income ratio) and long-term growth potential (based on historic growth rates)?
 
 These research questions have provided us with guidance and clarity as we have continuosly identified, iterated upon, and began utilizing datasets for analysis. 
 
