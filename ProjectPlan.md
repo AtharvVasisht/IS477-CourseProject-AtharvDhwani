@@ -19,9 +19,11 @@ To delve deeper into the trends and goals identified above, we have the followin
 These research questions have provided us with guidance and clarity as we have continuosly identified, iterated upon, and began utilizing datasets for analysis. 
 
 ### Team ###
+While both team members (Atharv and Dhwani) aim at fulfilling and collaborating on all responsibilities, we aim at distributing responsibilities in a way that enable both members to perform to their strengths, and effectively handle specific workflows related to the project. Both members will focus on ensuring success in all aspects of the data lifecycle management; ensuring quality control from ethical data handling, storage and organization, data cleaning/integration, quality/assessment, and most importantly, reproducibility. Throughout this data lifecycle process, Dhwani's main focus will revolve around ensuring adequate/ethical data handling, data cleaning, and integration between both datasets to ensure a streamlined ability for machine learning, visualization, and analysis. Meanwhile, Atharv will prioritize tracking technical documentation, data visualization, and proper extraction for metrics, key conclusions, and takeaways. By strategically allocating "focus areas" and specific responsibilities, while having goals such as "biweekly progress checks" meant to faciliate strong collaboration, we, as a team, aim to ensure for successful data ingestion for analysis.
+
+Through this collaboration, we aim at providing a conclusive final synthesis and report, showcasing the details of this project and the significance our analysis has on homeowners and buyers across the US. Additionally, our analysis aims at drawing upon key data ethics, reproducibility, privacy, and purpose principles to ensure our project meets proper code of conduct. 
 
 ### Datasets ###
-
 1. Zillow Housing Data: https://www.zillow.com/research/data/
     • **Description**: This dataset (CSV) is pulle directly from Zillow itself. Because Zillow pulls data on an annual basis from its listings, real estate data, and satelite imaging tools, it is effectively a direct source that is straight from the root. This makes it much more accurate and compliant from a data ethics and reproducibility standpoint as opposed to retrieving data from third-party sources such as Kaggle. On Zillow's website, we are particularly using the *Zillow Home Values Index (ZHVI)* for US Metro areas. The dataset is "available as a smoothed, seasonally adjusted measure and as a raw measure" according to the website. Additionally, Zillow permits the usage of this data for personal use as long as it isn't used for business purposes. The following description below is Zillow's exact terms for its data (csv file) and or API.
 
@@ -57,5 +59,5 @@ For the project timeline, even though we have delegated tasks to an extent, we p
 
     •    Reproducibility and transparency (cf. Module 13):  Dhwani & Atharv
 
-          •    Metadata and data documentation (cf. Module 15): Dhwani & Atharv
+    •    Metadata and data documentation (cf. Module 15): Dhwani & Atharv
 
