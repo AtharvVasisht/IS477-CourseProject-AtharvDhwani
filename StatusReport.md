@@ -34,13 +34,13 @@ Next we will focus on data cleaning from module 10, which has been a significant
 
 ### 3.1 Zillow Data Cleaning
 
-The Zillow cleaning script is saved as … and begins by importing zillow_df directly from the acquisition script. Before modifying the data, we used a shared helper function (examine_data()), to inspect the dataframe’s shape, column names, datatypes and null value counts. 
+The Zillow cleaning script is saved as "zillow_cleaning.py" and begins by importing zillow_df directly from the acquisition script. Before modifying the data, we used a shared helper function (examine_data()), to inspect the dataframe’s shape, column names, datatypes and null value counts. 
 
 **Handling Null Values in Monthly Time-Series Columns**
 
 The Zillow dataset contains monthly home value estimates for each metropolitan area, however we noticed that many cities have missing values in certain months due to gaps in Zillow’s internal reporting or periods where Zillow did not have sufficient data. These missing values appear exclusively in the time-series portion of the dataset. 
 
-To address this, we implemented a forward-filling approach within the fill_null() function. For each city, this script identifies the first valid or non-null monthly value and assigns this value to any earlier months that were missing. It then applies .ffill() on the remaining time-series columns to fill nulls with. 
+To address this, we implemented a forward-filling approach within the fill_null() function. For each city, this script identifies the first valid or non-null monthly value and assigns this value to any earlier months that were missing. It then applies .ffill() on the remaining time-series columns to fill nulls with. These null value fills ensure that data is complete, and mostly accurate, while ensuring that we are able to still analyze long-term trends relevant to providing meaningful conclusions during the latter portions of this project.
 
 This approach was taken because the ZHCI metric is a continuous, monotonic and relatively smooth economic indicator for housing market trends. Missing earlier values occur because Zillow did not track the metro during those months, not because the values don’t exist. Using the earliest known value as a proxy for earlier missing periods is consistent with the discussions in class on mechanistic missingness and forward-imputation in monotonic time-series. Also, forward-filling preserves temporal continuity and avoids artificial value drops, preventing discrepancies in downstream affordability or appreciation calculations. 
 
@@ -101,7 +101,7 @@ All these components will serve us during the integration and analysis stage to 
 
 **Data Integration**
 
-Now that we have completed the cleaning, the next stage will be to merge zillow_cleaned.csv and bea_cleaned.csv on the shared “City” and “State” identifiers. This unified dataset will help us with the affordability analysis, where Zillow will provided a long time series (2000-2024) and BEA provides recent annual incomes (2021-2023). The overlapping years (2021-2023) will be used for affordability analysis, while Zillow’s historical data will be used for long term appreciation analysis. 
+Now that we have completed the cleaning, the next stage will be to merge zillow_cleaned.csv and bea_cleaned.csv on the shared “City” and “State” identifiers. This unified dataset will help us with the affordability analysis, where Zillow will provided a long time series (2000-2024) and BEA provides recent annual incomes (2021-2023). The overlapping years (2021-2023) will be used for affordability analysis, while Zillow’s historical data will be used for long term appreciation analysis. This integration is 95% complete and analysis will be conducted beginning very soon.
 
 **Data Quality Assessment**
 
