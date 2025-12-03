@@ -32,6 +32,8 @@ def organize_bea(unadjusted_bea, zillow_cleaned):
     # BEA uses a similar "City, State" format as Zillow, so we don't need to worry about splitting the city and state names apart and can just focus on finding approximate matches
     # logic for reorganizing the bea data to match the zillow data: 
     # itereate through zillow_data
+    for c in zillow_cities:
+        
 
     '''
     # now we need to temporarily split the unadjusted_bea into city and state (right now the format is "City, State")
