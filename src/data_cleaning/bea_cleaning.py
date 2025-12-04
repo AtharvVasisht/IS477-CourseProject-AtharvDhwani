@@ -173,5 +173,5 @@ bea_ordered.to_csv(Path(__file__).resolve().parent.parent.parent / "data" / "pro
 
 # bea_cleaned.csv is now effectively reordered, cleaned, and complete
 # dhwani and I have run a sanity check to ensure all values match the original BEA data that can be found in the data/raw/BEA_PersonalIncome_Data_converted.csv file
-# now that we have this file, we can begin the integration process
+# now that we have this file, we have effectively completed the heavy lifting of the integration process
 
