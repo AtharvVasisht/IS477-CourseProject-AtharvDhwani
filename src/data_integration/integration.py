@@ -27,6 +27,13 @@ integrated_df = integrated_df.drop(columns=["ZillowRegionName"])
 # save the integrated dataframe to a csv in the data/integrated folder
 integrated_df.to_csv(Path(__file__).resolve().parent.parent.parent / "data" / "integrated" / "integrated_dataset.csv", index=False)
 
-# the integration is now complete - although we may not use this dataset for ALL our analysis, it will be useful when identifying patterns and correlations
+# check for shape and null values
+print(integrated_df.shape)
+print(integrated_df.isnull().sum())
+# find what the null value is
+print(integrated_df[integrated_df.isnull().any(axis=1)])
+
+# there is only one null value, but this isn't even a real null value as it is the United States national average (which doesn't have a state name - therefore a NaN) - this is expected and will not disrupt anything in our analysis
+# therefore, the integration is now complete - although we may not use this dataset for ALL our analysis, it will be useful when identifying patterns and correlations
 # the integrated dataset is in the data/integrated folder and has the BEA data after the Zillow data at the end of the dataframe
 
