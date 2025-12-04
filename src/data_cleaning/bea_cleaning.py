@@ -24,52 +24,30 @@ unadjusted_bea.columns = unadjusted_bea.columns.str.strip()
 zillow_cleaned.columns = zillow_cleaned.columns.str.strip()
 
 # utilize the zillow_cleaned data to organize the bea into only necessary cities by size rank
-def organize_bea(unadjusted_bea, zillow_cleaned):
-    # we first need to store the zillow_cleaned and get the cities within "RegionName" column into a list to iterate through
-    zillow_cities = zillow_cleaned["RegionName"].tolist()
 
-    # now, we need to iterate through the zillow_cities list and find the closest fuzzy match between the city name and the unadjusted_bea["RegionName"] column
-    # BEA uses a similar "City, State" format as Zillow, so we don't need to worry about splitting the city and state names apart and can just focus on finding approximate matches
-    # logic for reorganizing the bea data to match the zillow data: 
-    # itereate through zillow_data
-    for c in zillow_cities:
-        
+# first, we need to rename the BEA columns to match zillow_cleaned data in case we want to merge them 
+unadjused_bea = unadjusted_bea.rename(columns={unadjusted_bea.columns[0]: "RegionName"})
 
-    '''
-    # now we need to temporarily split the unadjusted_bea into city and state (right now the format is "City, State")
-    unadjusted_bea["City"] = unadjusted_bea["RegionName"].str.split(",").str[0]
-    unadjusted_bea["State"] = unadjusted_bea["RegionName"].str.split(",").str[1]
+# create a list of cities in the zillow_cleaned data to compare against the BEA data
+zillow_cities = zillow_cleaned["RegionName"].tolist()
 
-    # now that we have adjusted the format to allow for easier matches, we need to conduct an approximate match between zillow_cities and unadjusted_bea["City"]
-    # utilize fuzzy matching to find the closest match between city names
-    # utilize levenshtein distance to find closest match as discussed in class
-    matched_bea_cities = []
+# this check indicates that zillow_cities exists as a list of stirngs in an array
+print(zillow_cities)
+
+# now, we need to iterate through the BEA region name column and find the closest fuzzy
+# match between city name and our zillow_cities list
+# bea cities use a similar format of "City, State" to zillow, so fuzzy matching will
+# be enough
+
+# create empty list to store the matched BEA cities
+matched_bea = []
+
+# iterate through bea citeis and find the closest fuzzy match
+for city in unadjusted_bea["RegionName"]:
+    # conduct a fuzzy match
+    matched_city = process.extractOne(city, zillow_cities, scorer = fuzz.ratio)
+
+    # create a similarity score threshold of 80% to filter out any matches that are clearly incorrect (e.g. Portland, OR vs Portland, ME)
     
-    for city in zillow_cities:
-        closest_match = process.extractOne(city, unadjusted_bea["City"], scorer=fuzz.ratio)
-        if closest_match and closest_match[1] > 80:  # threshold of 80% similarity
-            matched_bea_cities.append(closest_match[0])
-    
-    # now we need to filter the unadjusted_bea dataframe to only include the cities that are in the matched_bea_cities list
-    adjusted_bea = unadjusted_bea[unadjusted_bea["City"].isin(matched_bea_cities)].copy()
-    '''
-    return adjusted_bea
 
-# execute this function and store the result into bea_df
-bea_df = organize_bea(unadjusted_bea, zillow_cleaned)
-
-# Before we save the data, we need to examine the data and check for null values
-# this is the same function we used in the zillow cleaning script
-def examine_data(df):
-    print(f"shape: {df.shape}")
-    print(f"cols:{df.columns}")
-    print(f"dtypes: {df.dtypes}")
-    print(f"null vals: {df.isnull().sum()}")
-    print(f"number of null values: {df.isnull().sum().sum()}")
-
-# utilize the examine_data function to double check for null values in this data
-examine_data(bea_df)
-
-# save the csv to the data/processed directory within this project
-bea_df.to_csv(Path(__file__).resolve().parent.parent.parent / "data" / "processed" / "bea_cleaned.csv", index=False)
 
