@@ -209,7 +209,8 @@ This essentially installs all required packages, including NumPy, Pandas, Matplo
 
 Step 3: Due to the fact that some data files cannot be redistributed through GitHub due to restrictions, all the required input files and all output visualizations from our pipeline are stored in the following Box folder:
 
-BOX LINK HERE
+BOX LINK HERE: https://uofi.box.com/s/y45nblwcwhqjb1leidqyezjgxqw18ori
+
 Inside this Box folder you will find:
 ```
 input_data/
