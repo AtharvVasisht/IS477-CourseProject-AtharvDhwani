@@ -224,7 +224,7 @@ Where to place the Box files locally
 ```
 After downloading the Box folder:
 
-Withing the project root, create a data folder, that has 3 other folders within it: raw, processed, and integrated. In the raw file, place the Zillow & BEA raw files. In the processed folder place the cleaned data files. In the integrated folder, place the "integrated_dataset.csv".
+Withing the project root, create a data folder, that has 3 other folders within it: raw, processed, and integrated. In the raw file, place the Zillow & BEA raw files. In the processed folder place the cleaned data files. In the integrated folder, place the "integrated_dataset.csv". Also all the output visuals and csv files should be stored in analysis/output path folder. In the analysis folder itself, you should put the analysis.py script.
 
 Your folder structure should match the layout already shown in the repository itself.
 
