@@ -90,7 +90,7 @@ for i, row in zillow_cleaned.iterrows():
         })
     elif num_matches > 1:
         # if multiple matches, print a warning and use the first one
-        print(f"Warning: Multiple matches found for {z_city}, {z_state}. Using first match.")
+        #print(z_city, z_state)
         matched_bea.append({
             "ZillowRegionName": row["RegionName"],
             "BEARegionName": unadjusted_bea.loc[matches.idxmax(), "RegionName"],
@@ -99,7 +99,7 @@ for i, row in zillow_cleaned.iterrows():
     else:
         # else, we still append and can drop it later 
         # we should print a warning in case this happens
-        print(f"Warning: No match found for {z_city}, {z_state}")
+        #print(z_city, z_state)
         matched_bea.append({
             "ZillowRegionName": row["RegionName"],
             "BEARegionName": "No Match",
