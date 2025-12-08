@@ -6,8 +6,11 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix)
+from pathlib import Path
 
-df = pd.read_csv("data/integrated/integrated_dataset.csv")
+# Get the project root directory (one level up from analysis/)
+project_root = Path(__file__).parent.parent
+df = pd.read_csv(project_root / "data" / "integrated" / "integrated_dataset.csv")
 
 # BEA numeric columns
 for column in ["2021", "2022", "2023"]:
