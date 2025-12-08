@@ -61,6 +61,8 @@ def appreciation_ranking(df):
     return top_ranked_appreciation, bottom_ranked_appreciation
 
 top_appreciation, bottom_appreciation = appreciation_ranking(df)
+top_appreciation.to_csv("analysis/output/top10_appreciation.csv", index=False)
+bottom_appreciation.to_csv("analysis/output/bottom10_appreciation.csv", index=False)
 
 #printing the output for analysis 
 print("Top 10 Metro Areas by Appreciation Percent")
@@ -85,6 +87,8 @@ def affordability_ranking(df):
     return top_ranking_metros, bottom_ranking_metros
 
 top_affordability_metro, bottom_affordability_metro = affordability_ranking(df)
+top_affordability_metro.to_csv("analysis/output/top10_affordability.csv", index=False)
+bottom_affordability_metro.to_csv("analysis/output/bottom10_affordability.csv", index=False)
 
 #printing the output for analysis 
 print("\n")
@@ -106,6 +110,7 @@ def affordability_plot(top_affordability, bottom_affordability):
     plt.xlabel("Affordability Ratio")
     plt.title("Top 10 Most Affordable Metros")
     plt.gca().invert_yaxis() #highest at the top
+    #plt.savefig("analysis/output/top10_most_affordable.png", dpi=300, bbox_inches="tight")
     plt.show()
 
     # Least Affordable (10)
@@ -114,6 +119,7 @@ def affordability_plot(top_affordability, bottom_affordability):
     plt.xlabel("Affordability Ratio")
     plt.title("Top 10 Least Affordable Metros")
     plt.gca().invert_yaxis() #lowest at the top
+    plt.savefig("analysis/output/top10_least_affordable.png", dpi=300, bbox_inches="tight")
     plt.show()
 
 #plots the affordability metros, both top 10 and bottom 10 
@@ -145,6 +151,7 @@ df_invest = investment_score(df)
 
 # Ranking by the calculated investment score 
 investment_rank = df_invest.sort_values("InvestmentScore", ascending=False)
+investment_rank.to_csv("analysis/output/investment_score_ranking.csv", index=False)
 
 print("\nTop 10 Metros by Investment Score")
 print(
@@ -168,7 +175,7 @@ def investment_plot(df_invest):
     plt.title("Metros by Appreciation, Affordability, & Investment Score")
     cbar = plt.colorbar(scatter)
     cbar.set_label("Investment Score")
-   
+    plt.savefig("analysis/output/investment_scatter.png", dpi=300, bbox_inches="tight")
     plt.show()
 
 investment_plot(df_invest)
@@ -206,12 +213,27 @@ def run_classification(classification_df):
 
 
 # Calculating various metrics that answer research questions 
-    print("\nClassification: HighGrowth (1) vs LowGrowth (0)")
-    print(f"Accuracy on Test Set: {accuracy_score(y_test, y_pred)}")
-    print("\nClassification Report:")
-    print(classification_report(y_test, y_pred))
-    print("Confusion Matrix:")
-    print(confusion_matrix(y_test, y_pred))
+
+    results_text = []
+    results_text.append("Classification: HighGrowth (1) vs LowGrowth (0)\n")
+    results_text.append(f"Accuracy on Test Set: {accuracy_score(y_test, y_pred)}\n\n")
+    results_text.append("Classification Report:\n")
+    results_text.append(classification_report(y_test, y_pred))
+    results_text.append("\nConfusion Matrix:\n")
+    results_text.append(str(confusion_matrix(y_test, y_pred)))
+
+    with open("analysis/output/classification_results.txt", "w") as f:
+        f.writelines(results_text)
+
+    # Still print to console
+    print("".join(results_text))
+
+   # print("\nClassification: HighGrowth (1) vs LowGrowth (0)")
+    #print(f"Accuracy on Test Set: {accuracy_score(y_test, y_pred)}")
+    #print("\nClassification Report:")
+    #print(classification_report(y_test, y_pred))
+    #print("Confusion Matrix:")
+    #print(confusion_matrix(y_test, y_pred))
 
     return classification_model, feature_cols
 
