@@ -171,7 +171,82 @@ Some of the key predictors included home value levels, income levels and afforda
 
 ## Reproducing
 
-Type here...
+In this section, we provide a complete set of instructions for anyone to reproduce the results from start to finish of our project. Our workflow has data acquisition scripts, cleaning scripts, integration and final analysis scripts. 
+
+**1. Clone the Repository**
+
+Step 1: It is required to clone the repository and the code below can help you do just that. 
+```
+git clone https://github.com/<your-github>/IS477-CourseProject-AtharvDhwani.git
+cd IS477-CourseProject-AtharvDhwani
+```
+**2. Create and Activate a Python Environment**
+
+Step 2: You need to create an activate a Python environment and for that we recommend using conda:
+```
+conda create -n housing python=3.10
+conda activate housing
+pip install -r requirements.txt
+```
+This essentially installs all required packages, including NumPy, Pandas, Matplotlib, and scikit-learn.
+
+**3. Download Required Input Data from Box**
+
+Step 3: Due to the fact that some data files cannot be redistributed through GitHub due to restrictions, all the required input files and all output visualizations from our pipeline are stored in the following Box folder:
+
+BOX LINK HERE
+Inside this Box folder you will find:
+```
+input_data/
+zillow_raw.csv
+bea_income_raw.csv
+output_data/
+integrated_dataset.csv (final merged dataset used in analysis)
+All generated figures (PNG)
+Intermediate cleaned datasets
+Where to place the Box files locally
+```
+After downloading the Box folder:
+
+Withing the project root, create a data folder, that has 3 other folders within it: raw, processed, and integrated. In the raw file, place the Zillow & BEA raw files. In the processed folder place the cleaned data files. In the integrated folder, place the "integrated_dataset.csv".
+
+Your folder structure should match the layout already shown in the repository itself.
+
+**4. Run the Full Analysis Pipeline**
+
+Step 4: The final analysis script is placed in:
+```analysis/analysis.py```
+
+In order to  run it:
+```python analysis/analysis.py```
+
+This will do multiple actions, including, loading the integrated dataset, computing appreciation percentages, computing affordability ratios, ranking metros by affordability and appreciation, computing the investment score, running the logistic classification model, printing out evaluation metrics, generating all figures. 
+
+**5. Run Individual Workflow Steps**
+
+Step 5: Additionally, you can also replicate the workflow if you would like with the following steps: 
+```
+src/data_acquisition/bea_acquire.py
+src/data_acquisition/zillow_acquire.py
+src/data_cleaning/bea_cleaning.py
+src/data_cleaning/zillow_cleaning.py
+src/data_integration/integration.py
+analysis/analysis.py
+```
+
+Each of these scripts does have comments about the inputs and outputs. 
+
+**6. Software Dependencies**
+
+Step 6: In order to create the same environment, you can use the dependencies listed out in:
+```requirements.txt```
+
+**7. Licenses and Terms of Use**
+
+Step 7: Everyone must abide by the terms of use and licenses. 
+
+For the Zillow ZHVI data, public, non-commercial academic use is allowed and redistribution of the raw files is not allowed. For the BEA Income Data, it is federal open data, so redistribution is allowed with attribution. Finally, our processed dataset is stored in Box and not GitHub to comply with Zillow’s restrictions. 
+
 
 ## References 
 
