@@ -1,9 +1,16 @@
-# Snakefile for IS477 housing project
+# Snakefile
 
 rule all:
     input:
         "data/integrated/integrated_dataset.csv",
-        "results/analysis_log.txt"
+        "analysis/output/top10_appreciation.csv",
+        "analysis/output/bottom10_appreciation.csv",
+        "analysis/output/top10_affordability.csv",
+        "analysis/output/bottom10_affordability.csv",
+        "analysis/output/investment_score_ranking.csv",
+        "analysis/output/top10_most_affordable.png",
+        "analysis/output/top10_least_affordable.png",
+        "analysis/output/investment_scatter.png"
 
 
 
@@ -72,5 +79,21 @@ rule analysis:
         "results/analysis_log.txt"
     shell:
         "python analysis/analysis.py > {output}"
+
+
+rule run_analysis:
+    input:
+        "data/integrated/integrated_dataset.csv"
+    output:
+        "analysis/output/top10_appreciation.csv",
+        "analysis/output/bottom10_appreciation.csv",
+        "analysis/output/top10_affordability.csv",
+        "analysis/output/bottom10_affordability.csv",
+        "analysis/output/investment_score_ranking.csv",
+        "analysis/output/top10_most_affordable.png",
+        "analysis/output/top10_least_affordable.png",
+        "analysis/output/investment_scatter.png"
+    shell:
+        "python analysis/analysis.py"
 
 
