@@ -1,0 +1,14 @@
+# this ignores Box data and raw files
+data/raw/
+data/intermediate/
+data/box_downloads/
+
+# this ignores analysis outputs of scripts 
+analysis/output/*.csv
+analysis/output/*.png
+
+# this ignores Python cache 
+__pycache__/
+*/__pycache__/
+*.pyc
+*.pyo
