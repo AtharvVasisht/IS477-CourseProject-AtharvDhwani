@@ -111,6 +111,8 @@ Overall, the data quality checks conducted iteratively across all stages confirm
 
 ## Findings 
 
+Through our analysis, we were able to gain many measurable insights to answer our original research questions. We investigated housing trends across U.S. metropolitan areas using integrated data from Zillow and the Bureau of Economic Analysis (BEA). 
+
 **1. Which metros have seen the largest housing appreciations since 2000, and which markets make the most sense for real estate investment?**
 We calculated the appreciation as a percent change between the earliest and latest ZHVI values for each metro, which created a long-run appreciation ranking. The top ones were overwhelming in the California and Florida metros, specifically: 
 - San Jose, CA
@@ -118,9 +120,11 @@ We calculated the appreciation as a percent change between the earliest and late
 - Los Angeles, CA
 - Riverside, CA
 - Miami, FL
+
 The metros have experienced long term value increases, sometimes exceeding 250-300% appreciation. The  rapid economic expansion , population influx and constrained supply of housing are some factors that can explain this trend. 
 On the other hand, slower-growth metro areas like Chicago, Detroit and Cleveland have had significantly lower appreciation, which can mean weaker demand and stagnant economic conditions. 
-When thinking about investment, although the top-appreciating metros are demonstrating historical strength, they are also very expensive and have affordability ratios that do exceed sustainable levels. The Investment Score that we also calculated revealed that not all high-appreciation metros are good current investment targets. 
+When thinking about investment, although the top-appreciating metros are demonstrating historical strength, they are also very expensive and have affordability ratios that do exceed sustainable levels. The Investment Score that we also calculated revealed that not all high-appreciation metros are good current investment targets.
+
 **2. Which housing markets are trading at a “discount,” and which appear oversaturated or overvalued?**
 In order to answer this question, we calculated the Affordability Ratio to evaluate the current value relative to the local economic conditions. The lower ratios indicate that “discount” markets are more affordable relative to income, whereas higher ratios may explain that markets are overpriced. 
 Most Affordable (Discount) Markets
@@ -130,6 +134,7 @@ Some of the more affordable markets included:
 - Oklahoma City, OK
 - St. Louis, MO
 - Little Rock, AR
+
 These metros have ratios from about 2-4, which means that home values remain within a reasonable multiple of the local incomes, and can also be considered undervalued relatively. 
 Least Affordable (Oversaturated) Markets
 Some of the more oversaturated markets included: 
@@ -138,7 +143,9 @@ Some of the more oversaturated markets included:
 - Stockton, CA
 - Provo, UT
 - Ogden, UT
+  
 These ratios exceed 10-12, which indicates disconnects between income and the housing cost. These metros may actually be at higher risk of corrections, if macroeconomic conditions become more rigid. 
+
 **3. How can everyday Americans maximize their incomes to find metros with both strong affordability and long-term growth potential?**
 In order to answer our third research question, we were able to calculate an Investment Score, which normalized both the appreciation and affordability metrics, giving them equal weights (0.5). This helped us create a balance between historic price appreciation and current affordability from the 2 datasets. 
 Top Investment Score Metros
@@ -148,11 +155,16 @@ The top Investment Score metros included:
 - Tampa, FL
 - Buffalo, NY
 - Knoxville, TN
+  
 These metros are ranked well here because they offer strong appreciation, reasonable affordability and sustainable fundamentals. 
-This makes these metros attractive for first-time homebuyers and middle-income households who want both immediate sense of affordability and the potential to build long term wealth. 
+This makes these metros attractive for first-time homebuyers and middle-income households who want both immediate sense of affordability and the potential to build long term wealth.
+
 **Scatterplot Insight**
+
 We have also included a scatterplot, visualizing appreciation against affordability and Investment Score as a color map to reveal some clusters. This revealed high-priced coastal metros scored lower because affordability was too constrained. Also, low appreciation Rust Belt metros scored lower. There was also a middle cluster, including Southeastern and Northeastern secondary metros that produced the optimal combination of growth and accessibility. 
+
 **Extended Finding**
+
 We also tried to extend our analysis by using a logistic regression to classify metros as HighGrowth or LowGrowth and through this we achieved approximately 86% test accuracy, balanced precision and recall, and an interpretable confusion matrix. 
 Some of the key predictors included home value levels, income levels and affordability ratios. This shows us the housing market growth patterns are systematic and predictable, not just random. So Americans can use simple economic indicators like income, home value trends and affordability to make better informed decisions on where to buy. 
 
